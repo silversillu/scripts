@@ -1,1 +1,2 @@
-# scripts
+# <scripts>
+Useful snippets for web development.
