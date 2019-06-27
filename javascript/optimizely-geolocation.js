@@ -12,3 +12,9 @@ geolocation.requestGeo = function(c) {
 geolocation.requestGeo("//cdn3.optimizely.com/js/geo.js");
 
 optimizelyGeo; // wait till ready!
+
+// With jQuery
+
+jQuery.getScript('//cdn3.optimizely.com/js/geo.js', function(){
+    console.log(optimizelyGeo);
+  });
