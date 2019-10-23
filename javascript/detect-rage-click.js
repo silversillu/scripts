@@ -30,7 +30,7 @@ if ( typeof(jQuery) === 'function' ) {
         });
         // Number of rage clicks
         var no_of_clicks = 3;
-        //Time interval - 3 for 3secs, 4 for secs and likewise
+        //Time interval - 3 for 3 secs, 4 for secs and likewise
         var time = 2;
         var click_events = [];
 
