@@ -9,25 +9,25 @@
     sendRandomMessages();
 
     function sendRandomMessages() {
-        if ( checkChannel() ) {
-            var messagesSent = 0;
-            var mainInterval = setInterval(function(){
-                sendMessage();
-                messagesSent ++;
-                console.log('messages sent: ' + messagesSent);
-                if ( messagesSent >= settings.messagesToSend ) {
-                    clearInterval(mainInterval);
-                }
-            }, settings.interval * 1000 ); // * 1000 for seconds instead of milliseconds
-        } else {
-            console.log('Wrong channel, message aborted!');
-        }
+        var messagesSent = 0;
+        var mainInterval = setInterval(function(){
+            sendMessage();
+            messagesSent ++;
+            console.log('messages sent: ' + messagesSent);
+            if ( messagesSent >= settings.messagesToSend ) {
+                clearInterval(mainInterval);
+            }
+        }, settings.interval * 1000 ); // * 1000 for seconds instead of milliseconds
     }
 
     function sendMessage() {
-        var msg = generateRandomString();
-        setMessage(msg);
-        submitMessage();
+        if ( checkChannel() ) {
+            var msg = generateRandomString();
+            setMessage(msg);
+            submitMessage();
+        } else {
+            console.log('Wrong channel, message aborted!');
+        }
     }
 
     function generateRandomString() {
